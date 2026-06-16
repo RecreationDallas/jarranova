@@ -4,14 +4,14 @@ A single-page marketing site for Jarranova, a strategic advisory firm. Static HT
 
 ## Live site
 
-- Production: https://jarranova.netlify.app
+- Hosted on **GitHub Pages** (URL set after the repo's Pages is enabled).
 
 ## Structure
 
 ```
 .
 ├── index.html        # the entire page (markup + CSS + JS inline)
-├── netlify.toml       # hosting config: publish dir, security & cache headers
+├── .nojekyll          # tells GitHub Pages to serve files as-is
 ├── assets/            # logos, icons, and the headshot
 │   ├── wordmark.svg          # JARRANOVA wordmark (hero)
 │   ├── wordmark-footer.svg   # JARRANOVA wordmark (footer)
@@ -32,14 +32,17 @@ Fonts load from Google Fonts (Bricolage Grotesque, Poppins, Cormorant Garamond).
 
 ## Deploying
 
-Hosted on Netlify. To publish changes:
+Hosted on **GitHub Pages**, deployed from the `main` branch (root). To publish changes:
 
 ```bash
-netlify deploy --prod --dir .
+git add -A
+git commit -m "describe the change"
+git push
 ```
 
+GitHub Pages picks up the push and republishes automatically within a minute or two.
+
 ### Notes
-- **Replacing an image in place** (same filename): browsers cache assets for a day,
-  so bump the version query on its `src` (e.g. `headshot.jpg?v=3`) to force an
-  immediate refresh for everyone.
+- **Replacing an image in place** (same filename): bump the version query on its
+  `src` (e.g. `headshot.jpg?v=3`) to force browsers to fetch the new file.
 - Contact CTAs open `mailto:hello@jarranova.com`.
