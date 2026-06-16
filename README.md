@@ -4,7 +4,7 @@ A single-page marketing site for Jarranova, a strategic advisory firm. Static HT
 
 ## Live site
 
-- Hosted on **GitHub Pages** (URL set after the repo's Pages is enabled).
+- Production: https://jarranova.com (GitHub Pages, custom domain)
 
 ## Structure
 
