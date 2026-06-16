@@ -1,0 +1,18 @@
+# Netlify configuration for the Jarranova static site (no build step)
+[build]
+  publish = "."
+
+# Sensible security + caching headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    # 1 day, then revalidate — so replacing an asset in place shows up within a day
+    # (a hard refresh always forces it immediately)
+    Cache-Control = "public, max-age=86400, must-revalidate"
